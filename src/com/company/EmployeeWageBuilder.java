@@ -19,31 +19,31 @@ public class EmployeeWageBuilder {
         while (totalEmpHrs < MAX_HRS_IN_MONTH &&
                 totalWorkingDays < NUM_OF_WORKING_DAYS) {
             {
-                totalWorkingDays++;
+                totalWorkingDays++;  //it will increment till 20
                 int empHrs = 0;
 
-                int empCheck = ((int) Math.floor(Math.random() * 10) % 3);
+                int empCheck = ((int) Math.floor(Math.random() * 10) % 3);  // random value between 0,1,2 which will take u to switch case
                 switch (empCheck) {
                     case IS_FULL_TIME:
                         empHrs = 8;
-                        empPerDayIncome = PER_DAY_WORK_HOUR * EMP_RATE_PER_HOUR;
+                        empPerDayIncome = PER_DAY_WORK_HOUR * EMP_RATE_PER_HOUR; // 160
                         break;
                     case IS_PART_TIME:
                         empHrs = 4;
-                        empPerDayIncome = (PER_DAY_WORK_HOUR * EMP_RATE_PER_HOUR) / 2;
+                        empPerDayIncome = (PER_DAY_WORK_HOUR * EMP_RATE_PER_HOUR) / 2;  // 80
                         break;
                     default:
-                        empHrs = 0;
+                        empHrs = 0; // 0
 
                 }
-                totalEmpHrs += empHrs;
+                totalEmpHrs += empHrs; // it depends on empCheck value
                 totalIncome += empPerDayIncome;
-
                 int monthlyIncome = empHrs * totalWorkingDays;
+
             }
         }
-
-        System.out.println(totalEmpHrs +  " Hrs worked in a month");
+        System.out.println();
+        System.out.println("Total Hrs worked in a month :- " + totalEmpHrs + " Hrs");
         System.out.println("Day " + totalWorkingDays + " earned " + totalIncome + " rs");
 
     }
