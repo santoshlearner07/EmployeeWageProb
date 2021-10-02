@@ -10,21 +10,21 @@ public class EmployeeWageBuilder {
 
 
     public static void main(String[] args) {
+//        variable
         int empPerDayIncome = 0;
+        int empHrs = 0;
 
-        double empCheck = Math.floor(Math.random() * 10 % 3);
-        if (empCheck == IS_FULL_TIME) {
-            System.out.println("Employee is Present");
-            empPerDayIncome = EMP_RATE_PER_HOUR * PER_DAY_WORK_HOUR;
-            System.out.println("Employee per day Income :- " + empPerDayIncome + " rs");
+        int empCheck = (int) Math.floor(Math.random() * 10 % 3);
+        switch (empCheck) {
+            case IS_FULL_TIME:
+                empHrs = 8;
+                break;
+            case IS_PART_TIME:
+                empHrs = 4;
+                break;
+            default:
+                empHrs = 0;
+        }
 
-        } else if (empCheck == IS_PART_TIME)
-        {
-            System.out.println("Employee worked half day");
-            empPerDayIncome = (EMP_RATE_PER_HOUR * PER_DAY_WORK_HOUR)/2;
-            System.out.println("Employee half day Income :- " + empPerDayIncome + " rs");
-        } else
-
-            System.out.println("Employee is Absent");
     }
 }
